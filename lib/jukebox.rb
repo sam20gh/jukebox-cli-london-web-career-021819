@@ -44,7 +44,7 @@ list(songs)
 
 def play(songs)
   puts "Please enter a song name or number:"
-  user_response = gets.downcase.chomp 
+  user_response = gets.chomp 
   
   if (1..9).to_a.include?(user_response.to_i)
     puts "Playing #{songs[user_response.to_i - 1]}"
@@ -60,6 +60,30 @@ play(songs)
 def exit_jukebox
   puts "Goodbye"
 end 
+
+def run(songs)
+  #help
+  command = "" 
+  while command  
+  puts "Please enter a command:"
+  command = gets.chomp  
+  case command 
+    when 'list'
+      list(songs)
+      when 'play'
+        list(songs)
+        play(songs)
+      when 'help'
+        help 
+      when 'exit'
+        exit_jukebox
+        break 
+      else 
+        help 
+      end 
+    end 
+  end 
+  run(songs)
 
 
 
