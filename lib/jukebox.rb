@@ -38,3 +38,9 @@ def list(songs)
     |item, index|
     puts "#{index+1}. #{item}" }
 end 
+
+
+def play(songs)
+  if 
+  
+end
